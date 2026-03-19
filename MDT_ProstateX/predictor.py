@@ -1,29 +1,4 @@
 #!/usr/bin/env python
-# Copyright 2021 Oscar José Pellicer Valero
-# Copyright 2018 Division of Medical Image Computing, German Cancer Research Center (DKFZ).
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# ==============================================================================
-#
-# CHANGELOG:
-#
-# load_saved_predictions had to be modified for the prostate cancer detection problem
-# as it was not producing the correct results.
-# predict_test_set also was modified: a new parameter, `n_test_plots` was added to
-# configure the number of test plots to produce. Also now raw segmentations are saved in
-# dict_of_patient_results, and then they are later averaged over the ensemble.
-# All these changes have not been tested with other kinds of problems though 
-# (e.g.: 2D or 2.5D CNNs, image patches)
 
 import os
 import numpy as np
@@ -934,5 +909,29 @@ def get_mirrored_patch_crops(patch_crops, org_img_shape):
 
     return mirrored_patch_crops
 
-
+# Copyright 2021 Oscar José Pellicer Valero
+# Copyright 2018 Division of Medical Image Computing, German Cancer Research Center (DKFZ).
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ==============================================================================
+#
+# CHANGELOG:
+#
+# load_saved_predictions had to be modified for the prostate cancer detection problem
+# as it was not producing the correct results.
+# predict_test_set also was modified: a new parameter, `n_test_plots` was added to
+# configure the number of test plots to produce. Also now raw segmentations are saved in
+# dict_of_patient_results, and then they are later averaged over the ensemble.
+# All these changes have not been tested with other kinds of problems though 
+# (e.g.: 2D or 2.5D CNNs, image patches)
 
